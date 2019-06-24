@@ -1,4 +1,4 @@
-# npm-pkg
+# npm-pkg-kit
 
 CLI tool to simplify NPM package creation by generating boilerplate setup
 
@@ -7,21 +7,21 @@ CLI tool to simplify NPM package creation by generating boilerplate setup
 You can simply use it via NPX:
 
 ```bash
-npx npm-pkg [command] [options] <name>
+npx npm-pkg-kit [command] [options] <name>
 ```
 
 Or install it globally on your environment:
 
 ```bash
-npm i -g npm-pkg
+npm i -g npm-pkg-kit
 
-npm-pkg [command] [options] <name>
+npm-pkg-kit [command] [options] <name>
 ```
 
 ---
 
 ```
-Usage: npm-pkg [options] [command]
+Usage: npm-pkg-kit [options] [command]
 
 CLI tool to simplify NPM package creation by generating boilerplate setup
 
