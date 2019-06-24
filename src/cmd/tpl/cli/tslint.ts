@@ -1,0 +1,15 @@
+export default {
+  defaultSeverity: 'error',
+  extends: [
+    'tslint:recommended',
+  ],
+  jsRules: {},
+  rules: {
+    'no-console': false,
+    'quotemark': [
+      true,
+      'single',
+    ],
+  },
+  rulesDirectory: [],
+};

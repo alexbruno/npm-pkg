@@ -1,0 +1,59 @@
+{
+  "name": "npm-pkg",
+  "version": "0.0.0",
+  "description": "CLI tool to simplify NPM package creation by generating boilerplate setup",
+  "main": "dist/main.js",
+  "bin": {
+    "npm-pkg": "dist/main.js"
+  },
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "docs": "node scripts/docs.js",
+    "dist": "run-s dist:*",
+    "dist:lint": "npm run lint",
+    "dist:clean": "npm run clean",
+    "dist:build": "tsc",
+    "dist:docs": "npm run docs",
+    "lint": "tsc --noEmit && tslint -p . -c tslint.json --fix",
+    "patch": "npm version patch && npm run push",
+    "minor": "npm version minor && npm run push",
+    "major": "npm version major && npm run push",
+    "push": "git push && git push --tags",
+    "prepare": "npm run dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexbruno/npm-pkg.git"
+  },
+  "keywords": [
+    "cli",
+    "npm",
+    "module",
+    "creation",
+    "package"
+  ],
+  "author": "Alex Bruno Cáceres <git.alexbr@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexbruno/npm-pkg/issues"
+  },
+  "homepage": "https://github.com/alexbruno/npm-pkg#readme",
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.10",
+    "@types/shelljs": "^0.8.5",
+    "commander": "^2.20.0",
+    "husky": "^2.5.0",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.2",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && git add ."
+    }
+  }
+}

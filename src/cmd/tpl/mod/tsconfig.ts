@@ -1,0 +1,22 @@
+export default {
+  compilerOptions: {
+    esModuleInterop: true,
+    module: 'commonjs',
+    moduleResolution: 'node',
+    noImplicitAny: true,
+    noImplicitReturns: true,
+    noImplicitThis: true,
+    noUnusedLocals: true,
+    noUnusedParameters: true,
+    outDir: './dist',
+    removeComments: false,
+    rootDir: './src',
+    strict: true,
+    strictFunctionTypes: true,
+    strictNullChecks: true,
+    target: 'esnext',
+  },
+  files: [
+    './src/module.ts',
+  ],
+};
