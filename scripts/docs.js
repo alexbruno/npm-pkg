@@ -5,7 +5,7 @@ const files = require('../dist/utils/files')
 const root = process.cwd()
 const read = 'README.md'
 
-const help = shell.exec('node dist/main.js')
+const help = shell.exec('node dist/main.js -h')
 const cli = help.stdout.replace('main', pack.name)
 
 const docs = `# ${pack.name}
