@@ -16,4 +16,4 @@ export default {
     strictNullChecks: true,
     target: 'esnext',
   },
-};
+}

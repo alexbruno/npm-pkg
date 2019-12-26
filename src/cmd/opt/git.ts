@@ -1,10 +1,10 @@
-import { exec } from 'shelljs';
-import { writeContent } from '../../utils/files';
-import ignore from '../tpl/git/ignore';
+import { exec } from 'shelljs'
+import { writeContent } from '../../utils/files'
+import ignore from '../tpl/git/ignore'
 
 export default function(dir: string) {
-  const init = `cd ${dir} && git init`;
+  const init = `cd ${dir} && git init`
 
-  exec(init);
-  writeContent(dir, '.gitignore', ignore);
+  exec(init)
+  writeContent(dir, '.gitignore', ignore)
 }

@@ -1,7 +1,9 @@
-export default function() {
-  const create = new Date().toJSON().split('.')[0].replace('T', ' ');
+const create = new Date()
+  .toJSON()
+  .split('.')[0]
+  .replace('T', ' ')
 
-  return `import esmin from 'rollup-plugin-esmin'
+export default `import esmin from 'rollup-plugin-esmin'
 import pack from './package.json'
 
 const name = pack.name
@@ -33,5 +35,4 @@ export default [{
     file: 'dist/umd.js'
   }
 }]
-`;
-}
+`

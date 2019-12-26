@@ -14,7 +14,9 @@
     "dist:clean": "npm run clean",
     "dist:build": "tsc",
     "dist:docs": "npm run docs",
-    "lint": "tsc --noEmit && tslint -p . -c tslint.json --fix",
+    "lint": "run-s lint:*",
+    "lint:tsc": "tsc --noEmit",
+    "lint:prettier": "prettier --config .prettierrc.json --write 'src/**/*.ts'",
     "patch": "npm version patch && npm run push",
     "minor": "npm version minor && npm run push",
     "major": "npm version major && npm run push",
@@ -39,17 +41,17 @@
   },
   "homepage": "https://github.com/alexbruno/npm-pkg#readme",
   "dependencies": {
-    "commander": "^2.20.0",
+    "commander": "^4.0.1",
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
-    "@types/node": "^12.0.10",
-    "@types/shelljs": "^0.8.5",
-    "husky": "^2.5.0",
+    "@types/node": "^13.1.1",
+    "@types/shelljs": "^0.8.6",
+    "husky": "^3.1.0",
     "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
     "shx": "^0.3.2",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.7.4"
   },
   "husky": {
     "hooks": {

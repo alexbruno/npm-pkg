@@ -1,18 +1,22 @@
-import { exec } from 'shelljs';
-import { readJSON, writeJSON } from '../../utils/files';
+import { exec } from 'shelljs'
+import { readJSON, writeJSON } from '../../utils/files'
+import tsconfig from '../tpl/cli/tsconfig'
 
 export default function(dir: string) {
-  const pack = readJSON(dir, 'package.json');
+  const pack = readJSON(dir, 'package.json')
   const install = [
     `cd ${dir} &&`,
     'npm i -D',
     'typescript',
-    'tslint',
     '@types/node',
-  ].join(' ');
+  ].join(' ')
 
-  pack.scripts.lint = 'tsc --noEmit && tslint -p . -c tslint.json --fix';
+  pack.scripts.lint = 'run-s lint:*'
+  pack.scripts['lint:tsc'] = 'tsc --noEmit'
+  pack.scripts['lint:prettier'] =
+    "prettier --config .prettierrc.json --write 'src/**/*.ts'"
 
-  writeJSON(dir, 'package.json', pack, 2);
-  exec(install);
+  writeJSON(dir, 'tsconfig.json', tsconfig, 2)
+  writeJSON(dir, 'package.json', pack, 2)
+  exec(install)
 }

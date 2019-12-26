@@ -16,7 +16,5 @@ export default {
     strictNullChecks: true,
     target: 'esnext',
   },
-  files: [
-    './src/module.ts',
-  ],
-};
+  files: ['./src/module.ts'],
+}
