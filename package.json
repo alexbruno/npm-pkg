@@ -1,6 +1,6 @@
 {
   "name": "npm-pkg-kit",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "CLI tool to simplify NPM package creation by generating boilerplate setup",
   "main": "dist/main.js",
   "bin": {
