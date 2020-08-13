@@ -1,7 +1,4 @@
-const create = new Date()
-  .toJSON()
-  .split('.')[0]
-  .replace('T', ' ')
+const create = new Date().toJSON().split('.')[0].replace('T', ' ')
 
 export default `import esmin from 'rollup-plugin-esmin'
 import pack from './package.json'

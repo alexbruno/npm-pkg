@@ -12,7 +12,7 @@ import * as tsMain from './tpl/mod/ts.main'
 import tsRollup from './tpl/mod/ts.rollup'
 import tsconfig from './tpl/mod/tsconfig'
 
-export default function(name: string, cmd: Command) {
+export default function (name: string, cmd: Command) {
   const dir = gen(name)
   const opt = cmd.opts()
 

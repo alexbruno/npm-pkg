@@ -2,7 +2,7 @@ import { exec } from 'shelljs'
 import { readJSON, writeJSON } from '../../utils/files'
 import tsconfig from '../tpl/cli/tsconfig'
 
-export default function(dir: string) {
+export default function (dir: string) {
   const pack = readJSON(dir, 'package.json')
   const install = [
     `cd ${dir} &&`,

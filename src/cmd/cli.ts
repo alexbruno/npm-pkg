@@ -9,7 +9,7 @@ import bbMain from './tpl/cli/bb.main'
 import tsMain from './tpl/cli/ts.main'
 import typings from './tpl/cli/typings'
 
-export default function(name: string, cmd: Command) {
+export default function (name: string, cmd: Command) {
   const dir = gen(name)
   const opt = cmd.opts()
 
